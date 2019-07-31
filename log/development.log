@@ -3923,3 +3923,25 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 225ms (Views: 171.3ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/authors/1/posts/1/edit" for 47.17.186.64 at 2019-07-31 17:07:10 +0000
+Cannot render console from 47.17.186.64! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"author_id"=>"1", "id"=>"1"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = ? AND "posts"."id" = ? LIMIT ?[0m  [["author_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (17.7ms)
+  Rendered posts/edit.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_path' for #<#<Class:0x0000000004d76348>:0x00007fb499f625e8>
+Did you mean?  font_path):
+    1: <%= form_for(@post) do |f| %>
+    2:   <%= author_id_field(@post) %>
+    3:   <br>
+    4:   <label>Post title:</label><br>
+  
+app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb___510640019501639927_70206826947100'
+app/views/posts/edit.html.erb:1:in `_app_views_posts_edit_html_erb___169138632625673860_70206826944280'
