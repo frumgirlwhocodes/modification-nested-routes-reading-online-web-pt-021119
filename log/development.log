@@ -3851,3 +3851,14 @@ Processing by AuthorsController#index as HTML
 Completed 200 OK in 796ms (Views: 791.2ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/authors/1" for 47.17.186.64 at 2019-07-31 17:05:46 +0000
+Cannot render console from 47.17.186.64! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 1]]
+  Rendered authors/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 0.9ms)
+
+
